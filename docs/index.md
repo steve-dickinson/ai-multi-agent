@@ -28,5 +28,6 @@ The system provides a **Streamlit** dashboard for easy interaction.
 4.  **Review**: Watch the agents analyze and rewrite the content.
     *   *Note*: The **Silo Breaker** automatically checks for contradictions against HMRC/DWP policies during this step.
 5.  **Simulate**: Use the "Persona Lab" page to see how an "Anxious User" or "Non-Native Speaker" interprets the content.
-6.  **Decision**: Use the "Review Queue" page to Approve or Reject the final output.
+6.  **Debate**: Use the "Debate Mode" page to watch two agents fight over simplicity vs. legal accuracy.
+7.  **Decision**: Use the "Review Queue" page to Approve or Reject the final output.
 
