@@ -31,22 +31,6 @@ You must return a JSON object with:
 - "rewritten_content": null (you are a reader, not a writer).
 """
 
-    async def execute(self, content: str, context: dict = None):
-        # We override execute/parse or just rely on BaseAgent but ensure types are correct.
-        # Since BaseAgent calls _parse_response which returns raw dict, 
-        # and then instantiates AgentFeedback, we might receive issues as List[str] from LLM 
-        # even if we ask for dicts (LLMs can be flaky).
-        
-        # To be safe, let's catch the output of base call, but wait...
-        # BaseAgent.execute calls _execute_openai which instantiates AgentFeedback IMMEDIATELY.
-        # If instantiation fails, it raises the error seen.
-        
-        # So we MUST subclass _execute_openai or ensure the LLM output is robust.
-        # OR we can patch `_parse_response` in this instance.
-        
-        # Easiest fix: Override_parse_response to normalize issues.
-        return await super().execute(content, context)
-
     def _parse_response(self, text: str) -> Dict[str, Any]:
         """Parse JSON response and normalize issues."""
         data = super()._parse_response(text)

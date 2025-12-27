@@ -43,7 +43,7 @@ The application is configured using environment variables defined in `.env`.
     docker-compose up -d
     ```
 
-2.  **Run Demo**:
+2.  **Run the App**:
     ```bash
-    uv run python scripts/demo_stage_1.py
+    uv run streamlit run src/govuk_content_agents/ui/app.py
     ```

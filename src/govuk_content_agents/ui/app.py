@@ -7,9 +7,6 @@ import sys
 sys.path.append(os.path.join(os.getcwd(), "src"))
 
 from govuk_content_agents.orchestration.graph import app as graph_app
-from govuk_content_agents.orchestration.graph import app as graph_app
-from govuk_content_agents.config import settings
-from govuk_content_agents.orchestration.graph import app as graph_app
 from govuk_content_agents.config import settings
 from govuk_content_agents.utils.web import fetch_content_from_url, fetch_content_from_govuk_api
 
@@ -83,11 +80,7 @@ with col1:
         if "fetched_content" in st.session_state and st.session_state.get("last_source") == "API":
              content_input = st.text_area("Preview API Content:", value=st.session_state["fetched_content"], height=300)
 
-    # Clean up state issues if switching tabs (simple approach)
-    # If we switch to URL/API, we rely on fetched_content. 
-    # But if we go back to Text, we want text area. 
-    # Just be mindful.
-    
+    # Reset state if switching back to URL source
     if input_type == "URL": 
         st.session_state["last_source"] = "URL"
 

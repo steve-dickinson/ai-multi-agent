@@ -1,34 +1,33 @@
-# GOV.UK Content AI Agents
+# AI Multi-Agent Content System (Experimental)
 
-> Multi-agent AI system for reviewing GOV.UK content with human oversight.
+> **Experimental project exploring AI for content operations.**
+> *Disclaimer: This is a personal research project. It is **not** affiliated with, endorsed by, or used by GOV.UK or the Government Digital Service. It is not a production service.*
 
-## Project Status: Stage 3 (Production Ready)
-Full multi-agent system implemented with Streamlit UI and Docker containers.
-**Default Provider**: OpenAI (`gpt-4.1-mini`).
-**Supported Providers**: OpenAI, Google Gemini.
+## Overview
+This platform explores how AI agents could act as an intelligent pair-programmer for content designers. It uses a team of specialized agents to review content against style guides (inspired by GDS consistency standards) to ensure clarity and accessibility.
 
 ## Features (Implemented)
-- 🏗️ **Core Infrastructure**: Pydantic configuration, structured logging.
-- 🤖 **Multi-Provider Agents**: OpenAI (Default) & Gemini (Fallback).
-- 🧠 **Smart Orchestration**: LangGraph-based feedback loop.
-- 🏗️ **Content Architect**: Template-based generation for Start Pages, Guides, and Answers.
-- 🧪 **Persona Lab**: Simulate user experiences (e.g., "Anxious User", "Non-Native Speaker").
-- ⚖️ **Debate Mode**: "The Simplifier" vs "The Legalist" propose edits, and data Mediator synthesizes the best version.
-- 🏛️ **Silo Breaker**: Cross-department policy checking (matches against HMRC, DWP etc.).
-- 📊 **Visual Analytics**: Heatmaps for passive voice/sentence length and semantic diffs.
-- 👥 **Team of Agents**:
+- **Core Infrastructure**: Pydantic configuration, structured logging.
+- **Multi-Provider Agents**: OpenAI (Default) & Gemini (Fallback).
+- **Smart Orchestration**: LangGraph-based feedback loop.
+- **Content Architect**: Template-based generation for Start Pages, Guides, and Answers.
+- **Persona Lab**: Simulate user experiences (e.g., "Anxious User", "Non-Native Speaker").
+- **Debate Mode**: "The Simplifier" vs "The Legalist" propose edits, and a Mediator synthesises the best version.
+- **Silo Breaker**: Cross-policy checking (demonstrates matching against diverse datasets).
+- **Visual Analytics**: Heatmaps for passive voice/sentence length and semantic diffs.
+- **Team of Agents**:
     - **Content Reviewer**: Structure & Clarity.
-    - **Style Compliance**: GOV.UK Styleguide rules.
+    - **Style Compliance**: Enforces style rules.
     - **Consistency**: Vector-based semantic duplication check.
     - **Improvement**: Auto-rewriting.
     - **Judge**: Final quality scoring.
-- 🖥️ **Human-in-the-Loop UI**: Streamlit dashboard for interactive reviews.
-- 🔌 **Dynamic Inputs**:
+- **Human-in-the-Loop UI**: Streamlit dashboard for interactive reviews.
+- **Dynamic Inputs**:
     - Supported on **ALL** pages (Review, Lab, Debate, Analytics).
     - Raw Text
     - URL Web Scraping
     - GOV.UK Content API Integration
-- 🗄️ **Database Layer**: Async MongoDB and PgVector.
+- **Database Layer**: Async MongoDB and PgVector.
 
 
 ### Running the UI
@@ -73,11 +72,7 @@ Access the app at http://localhost:8501.
     docker-compose up -d
     ```
 
-4.  **Run the Demo**:
-    ```bash
-    uv run python scripts/demo_stage_2.py
-    ```
-    Or run the UI:
+4.  **Launch the App**:
     ```bash
     uv run streamlit run src/govuk_content_agents/ui/app.py
     ```

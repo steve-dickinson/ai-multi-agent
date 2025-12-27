@@ -19,13 +19,13 @@ The first implemented agent uses the `BaseAgent` to analyze content against spec
 *   **Input**: Raw text content.
 *   **Output**: Structured feedback with a score, summary, and list of issues (severity, description, suggestion).
 
-### Additional Agents (Stage 2)
+### Specialized Agents
 *   **Style Compliance Check**: Regex and rule-based checks for GOV.UK style.
 *   **Consistency Check**: Semantic search against `postgres` vector database.
 *   **Improvement Agent**: LLM-based rewriter.
 *   **Quality Judge**: LLM-as-a-Judge for final scoring.
 
-## Orchestration (Stage 2)
+## Orchestration
 We use **LangGraph** to coordinate the agents in a feedback loop.
 
 ```mermaid

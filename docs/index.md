@@ -1,18 +1,28 @@
-# GOV.UK Content AI Agents
+# AI Multi-Agent Content System
 
-Welcome to the documentation for the Multi-Agent Content Review System.
+> *Disclaimer: This is an experimental research project. It is **not** affiliated with GOV.UK.*
 
-## Overview
+**Automated content operations for digital services.**
 
-This system uses a team of specialized AI agents to review and improve content against GOV.UK standards.
+This platform acts as an intelligent pair-programmer for content designers. It uses a team of specialised AI agents to ensure every piece of content is clear, consistent with policy, and accessible to all users.
 
-### Agents (Stage 2)
+## Why use this system?
 
-- **Content Reviewer**: Checks structure, clarity, and user need focus.
-- **Style Compliance**: Enforces GOV.UK specific style guide rules (passive voice, sentence length).
-- **Consistency**: Uses Vector Search to ensure new content doesn't contradict or duplicate existing content.
-- **Improvement**: Automatically rewrites content based on feedback from other agents.
-- **Quality Judge**: The final decision maker that scores content (0-100) and approves/rejects it.
+*   **Reduce specialised labour**: Automate the routine checks (style guide, passive voice) so humans can focus on strategy.
+*   **Prevent policy conflicts**: The [Silo Breaker](capabilities.md#3-silo-breaker-consistency-check) agent catches contradictions across departments.
+*   **Simulate user research**: The [Persona Lab](capabilities.md#1-the-persona-lab) tests your content against anxious or non-native users instantly.
+
+## The Agent Team
+
+The system is powered by a graph of specialised agents:
+
+1.  **Content Reviewer**: Checks structure and user needs.
+2.  **Style Compliance**: Enforces style rules.
+3.  **Consistency**: Checks for duplication against the vector database.
+4.  **Improver**: Rewrites the content to fix issues.
+5.  **Judge**: Scores the final output.
+
+[Explore all Capabilities &rarr;](capabilities.md)
 
 ## User Guide
 
@@ -22,13 +32,10 @@ The system provides a **Streamlit** dashboard for easy interaction.
 1.  **Launch**: `uv run streamlit run src/govuk_content_agents/ui/app.py`
 2.  **Input Methods**: (Available on ALL pages)
     *   **Text**: Paste raw draft content.
-    *   **URL**: Enter a web page URL (e.g., existing content to review). The system will scrape and clean the text.
-    *   **GOV.UK API**: Enter a path (e.g., `/vat-rates`). The system will query the GOV.UK Content API, automatically handling standard pages and multi-part guides.
-3.  **Generate**: Use the "Content Architect" (Create) page to build new drafts from official templates.
-4.  **Review**: Watch the agents analyze and rewrite the content.
-    *   *Note*: The **Silo Breaker** automatically checks for contradictions against HMRC/DWP policies during this step.
-5.  **Simulate**: Use the "Persona Lab" page to see how an "Anxious User" or "Non-Native Speaker" interprets the content.
-6.  **Debate**: Use the "Debate Mode" page to watch two agents fight over simplicity vs. legal accuracy.
-7.  **Analyze**: Use the "Analytics" page to see Heatmaps (for tone) and Diffs (for changes).
-8.  **Decision**: Use the "Review Queue" page to Approve or Reject the final output.
+    *   **URL**: Enter a web page URL.
+    *   **GOV.UK API**: Enter a path (e.g., `/vat-rates`).
+3.  **Workflows**:
+    *   **Analyze**: Use the dashboard to get a full report.
+    *   **Debate**: Pit agents against each other to find the balance between simplicity and accuracy.
+    *   **Simulate**: See your content through the eyes of an "Anxious User".
 

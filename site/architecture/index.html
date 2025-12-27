@@ -21,7 +21,7 @@
     
     
       
-        <title>Architecture - GOV.UK Content AI Agents</title>
+        <title>Architecture - AI Multi-Agent Content System</title>
       
     
     
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="GOV.UK Content AI Agents" class="md-header__button md-logo" aria-label="GOV.UK Content AI Agents" data-md-component="logo">
+    <a href=".." title="AI Multi-Agent Content System" class="md-header__button md-logo" aria-label="AI Multi-Agent Content System" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -92,7 +92,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            GOV.UK Content AI Agents
+            AI Multi-Agent Content System
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -176,13 +176,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="GOV.UK Content AI Agents" class="md-nav__button md-logo" aria-label="GOV.UK Content AI Agents" data-md-component="logo">
+    <a href=".." title="AI Multi-Agent Content System" class="md-nav__button md-logo" aria-label="AI Multi-Agent Content System" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    GOV.UK Content AI Agents
+    AI Multi-Agent Content System
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -221,6 +221,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features & Capabilities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../setup/" class="md-nav__link">
         
   
@@ -228,7 +255,7 @@
   <span class="md-ellipsis">
     
   
-    Setup
+    Getting Started
   
 
     
@@ -353,10 +380,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#additional-agents-stage-2" class="md-nav__link">
+  <a href="#specialized-agents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Additional Agents (Stage 2)
+        Specialized Agents
       
     </span>
   </a>
@@ -369,10 +396,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#orchestration-stage-2" class="md-nav__link">
+  <a href="#orchestration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Orchestration (Stage 2)
+        Orchestration
       
     </span>
   </a>
@@ -470,10 +497,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#additional-agents-stage-2" class="md-nav__link">
+  <a href="#specialized-agents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Additional Agents (Stage 2)
+        Specialized Agents
       
     </span>
   </a>
@@ -486,10 +513,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#orchestration-stage-2" class="md-nav__link">
+  <a href="#orchestration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Orchestration (Stage 2)
+        Orchestration
       
     </span>
   </a>
@@ -543,14 +570,14 @@
 <p>The first implemented agent uses the <code>BaseAgent</code> to analyze content against specific GOV.UK style guidelines.
 *   <strong>Input</strong>: Raw text content.
 *   <strong>Output</strong>: Structured feedback with a score, summary, and list of issues (severity, description, suggestion).</p>
-<h3 id="additional-agents-stage-2">Additional Agents (Stage 2)</h3>
+<h3 id="specialized-agents">Specialized Agents</h3>
 <ul>
 <li><strong>Style Compliance Check</strong>: Regex and rule-based checks for GOV.UK style.</li>
 <li><strong>Consistency Check</strong>: Semantic search against <code>postgres</code> vector database.</li>
 <li><strong>Improvement Agent</strong>: LLM-based rewriter.</li>
 <li><strong>Quality Judge</strong>: LLM-as-a-Judge for final scoring.</li>
 </ul>
-<h2 id="orchestration-stage-2">Orchestration (Stage 2)</h2>
+<h2 id="orchestration">Orchestration</h2>
 <p>We use <strong>LangGraph</strong> to coordinate the agents in a feedback loop.</p>
 <pre><code class="language-mermaid">graph TD
     Start[Draft Content] --&gt; Review[Content &amp; Style &amp; Consistency Review]

@@ -24,8 +24,6 @@ class BaseAgent(ABC):
             self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
         else:
             self.provider = "gemini"
-            # Initialize Gemini only if needed to avoid errors if key is missing (though Settings checks it)
-            # Actually Settings validates fields so if GEMINI_API_KEY is optional, it might be None.
             if settings.GEMINI_API_KEY:
                 self.client = genai.Client(api_key=settings.GEMINI_API_KEY)
             else:

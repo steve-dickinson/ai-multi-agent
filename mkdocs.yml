@@ -1,4 +1,4 @@
-site_name: GOV.UK Content AI Agents
+site_name: AI Multi-Agent Content System
 theme:
   name: material
   features:
@@ -7,7 +7,8 @@ theme:
 
 nav:
   - Home: index.md
-  - Setup: setup.md
+  - Features & Capabilities: capabilities.md
+  - Getting Started: setup.md
   - Architecture: architecture.md
 
 plugins:
