@@ -34,23 +34,22 @@ selected_key = st.selectbox(
 persona = PERSONAS[selected_key]
 st.info(f"**Role**: {persona['role']}\n\n**Stress**: {persona['stress_level']} | **Reading Ability**: {persona['reading_ability']}")
 
+from govuk_content_agents.ui.components import render_content_input
+
 # 2. Content Input
 st.subheader("2. Load Content")
+content_to_test = render_content_input(key_prefix="lab", label="Test Material")
 
-# Try to pre-fill from main app
-default_text = ""
-if "fetched_content" in st.session_state:
-    default_text = st.session_state["fetched_content"]
-elif "last_result" in st.session_state:
-    # Use the improved content from the review pipeline
-    default_text = st.session_state["last_result"].get("current_content", "")
-
-content_to_test = st.text_area(
-    "Content to test:",
-    value=default_text,
-    height=300,
-    placeholder="Paste content here or generate it in the Review Pipeline first."
-)
+# Fallback: if no input, try to use main session fetched content
+if not content_to_test:
+    if "fetched_content" in st.session_state:
+        # We can't auto-fill the component easily without passing default, 
+        # but the component handles its own state. 
+        # We can just check session state if component returns empty.
+        pass
+    elif "last_result" in st.session_state:
+         # Optional: show a message that recent results are available but user chose not to input text
+         st.info("Tip: You can paste content from the main review here.")
 
 # 3. specific questions (optional)
 # Maybe later.

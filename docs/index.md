@@ -20,7 +20,7 @@ This system uses a team of specialized AI agents to review and improve content a
 The system provides a **Streamlit** dashboard for easy interaction.
 
 1.  **Launch**: `uv run streamlit run src/govuk_content_agents/ui/app.py`
-2.  **Input Methods**:
+2.  **Input Methods**: (Available on ALL pages)
     *   **Text**: Paste raw draft content.
     *   **URL**: Enter a web page URL (e.g., existing content to review). The system will scrape and clean the text.
     *   **GOV.UK API**: Enter a path (e.g., `/vat-rates`). The system will query the GOV.UK Content API, automatically handling standard pages and multi-part guides.

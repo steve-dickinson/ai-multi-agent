@@ -23,8 +23,10 @@ if "legalist" not in st.session_state:
 if "mediator" not in st.session_state:
     st.session_state["mediator"] = MediatorAgent()
 
+from govuk_content_agents.ui.components import render_content_input
+
 # Input
-content_input = st.text_area("Content to Debate:", height=200, placeholder="Paste a complex paragraph here...")
+content_input = render_content_input(key_prefix="debate", label="Content to Debate")
 
 if st.button("⚔️ Start Debate", type="primary"):
     if not content_input:

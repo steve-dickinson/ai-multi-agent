@@ -24,6 +24,7 @@ Full multi-agent system implemented with Streamlit UI and Docker containers.
     - **Judge**: Final quality scoring.
 - 🖥️ **Human-in-the-Loop UI**: Streamlit dashboard for interactive reviews.
 - 🔌 **Dynamic Inputs**:
+    - Supported on **ALL** pages (Review, Lab, Debate, Analytics).
     - Raw Text
     - URL Web Scraping
     - GOV.UK Content API Integration

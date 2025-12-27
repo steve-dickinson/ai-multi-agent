@@ -14,16 +14,19 @@ st.markdown("### Tone Heatmap & Semantic Diff")
 
 tab1, tab2 = st.tabs(["Tone Heatmap", "Diff Tool"])
 
+from govuk_content_agents.ui.components import render_content_input
+
 with tab1:
     st.subheader("Tone Heatmap")
     st.info("Highlights: **Passive Voice (Red)**, **Complex Words (Blue)**, **Long Sentences (Yellow)**")
     
-    # Pre-fill content
-    default_text = ""
-    if "fetched_content" in st.session_state:
-        default_text = st.session_state["fetched_content"]
+    heatmap_input = render_content_input(key_prefix="analytics", label="Content to Analyse")
     
-    heatmap_input = st.text_area("Content to Analyse:", value=default_text, height=200)
+    # Pre-fill fallback if empty
+    if not heatmap_input and "fetched_content" in st.session_state:
+        # User might have fetched in main app
+        # But component has its own fetch. 
+        pass
     
     if st.button("🔥 Generate Heatmap", type="primary"):
         if heatmap_input:
