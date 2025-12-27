@@ -14,6 +14,7 @@ This platform explores how AI agents could act as an intelligent pair-programmer
 - **Persona Lab**: Simulate user experiences (e.g., "Anxious User", "Non-Native Speaker").
 - **Debate Mode**: "The Simplifier" vs "The Legalist" propose edits, and a Mediator synthesises the best version.
 - **Silo Breaker**: Cross-policy checking (demonstrates matching against diverse datasets).
+- **Knowledge Base Manager**: Dynamic UI to import policies from Text, URLs, or APIs.
 - **Visual Analytics**: Heatmaps for passive voice/sentence length and semantic diffs.
 - **Team of Agents**:
     - **Content Reviewer**: Structure & Clarity.
@@ -48,7 +49,7 @@ Access the app at http://localhost:8501.
 
 
 ### Prerequisites
-- Python 3.11+
+- Python 3.13+
 - [uv](https://github.com/astral-sh/uv) (for package management)
 - Docker & Docker Compose
 

@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Union
+from typing import Any, override
 from .base import BaseAgent
 from ..data.personas import PERSONAS
 
@@ -16,6 +16,7 @@ class PersonaAgent(BaseAgent):
             raise ValueError(f"Unknown persona: {persona_key}")
         self.current_persona_key = persona_key
 
+    @override
     def get_system_prompt(self) -> str:
         persona = PERSONAS[self.current_persona_key]
         return f"""
@@ -31,7 +32,8 @@ You must return a JSON object with:
 - "rewritten_content": null (you are a reader, not a writer).
 """
 
-    def _parse_response(self, text: str) -> Dict[str, Any]:
+    @override
+    def _parse_response(self, text: str) -> dict[str, Any]:
         """Parse JSON response and normalize issues."""
         data = super()._parse_response(text)
         

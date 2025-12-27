@@ -132,8 +132,7 @@ with col2:
         st.markdown("### 🔬 Agent Feedback")
         # Ensure feedback is a list
         feedbacks = result.get("feedback", [])
-        # Sometimes feedback accumulates, let's show unique agents or latest pass?
-        # For simplicity, just list all
+        
         for f in feedbacks:
             with st.expander(f"{f.agent_name} (Score: {f.score})"):
                 st.write(f"**Summary:** {f.summary}")

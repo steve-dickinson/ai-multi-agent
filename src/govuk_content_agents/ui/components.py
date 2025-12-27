@@ -7,7 +7,6 @@ def render_content_input(key_prefix: str = "main", label: str = "Input Content")
     Returns the content string.
     """
     
-    # Use columns for compact layout? Or just radio.
     input_type = st.radio(
         f"{label} Source", 
         ["Text", "URL", "GOV.UK API"], 

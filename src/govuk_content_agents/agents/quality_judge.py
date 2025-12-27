@@ -1,3 +1,4 @@
+from typing import override
 from .base import BaseAgent
 
 class QualityJudgeAgent(BaseAgent):
@@ -9,6 +10,7 @@ class QualityJudgeAgent(BaseAgent):
     def __init__(self):
         super().__init__(name="Quality Judge")
 
+    @override
     def get_system_prompt(self) -> str:
         return """You are the Chief Editor and Quality Judge for GOV.UK.
 Your role is to strictly evaluate content against the highest standards of clarity, accuracy, and user focus.

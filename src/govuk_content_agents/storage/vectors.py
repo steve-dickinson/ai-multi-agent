@@ -103,6 +103,44 @@ class VectorDBClient:
         return results
 
 import json
+from openai import OpenAI
+from ..config import settings
+from .models import generate_uuid, ContentEmbedding
+from datetime import datetime
 
 # Global instance
 vector_client = VectorDBClient()
+
+class VectorService:
+    """High-level service for vector operations (embedding + storage)."""
+    
+    def __init__(self):
+        self.client = vector_client
+        self.openai = OpenAI(api_key=settings.OPENAI_API_KEY)
+
+    def embed_text(self, text: str) -> list[float]:
+        """Generate embedding for text using OpenAI."""
+        response = self.openai.embeddings.create(
+            input=text,
+            model="text-embedding-3-small"
+        )
+        return response.data[0].embedding
+
+    def upsert_policy(self, content: str, metadata: dict[str, Any]) -> str:
+        """Generate embedding and save to DB."""
+        embedding = self.embed_text(content)
+        doc_id = generate_uuid()
+        
+        item = ContentEmbedding(
+            id=doc_id,
+            content=content,
+            embedding=embedding,
+            metadata=metadata,
+            created_at=datetime.utcnow()
+        )
+        
+        self.client.save_embedding(item)
+        return doc_id
+
+# Service instance
+vector_service = VectorService()

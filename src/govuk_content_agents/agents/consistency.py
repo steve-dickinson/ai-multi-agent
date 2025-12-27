@@ -1,4 +1,4 @@
-from typing import Dict, Any, Optional
+from typing import Any, override
 from .base import BaseAgent
 from ..storage.vectors import vector_client, VectorDBClient
 
@@ -13,6 +13,7 @@ class ConsistencyAgent(BaseAgent):
         # Ensure we have vector client
         self.vector_db = vector_client
 
+    @override
     def get_system_prompt(self) -> str:
         return """You are a Consistency Checker for GOV.UK content.
 Your role is to ensure the new content does not duplicate or contradict existing content.
@@ -40,7 +41,8 @@ Output JSON:
 }
 """
 
-    async def execute(self, content: str, context: Optional[Dict[str, Any]] = None) -> Any:
+    @override
+    async def execute(self, content: str, context: dict[str, Any] | None = None) -> Any:
         # 1. Generate embedding for new content
         embedding = await self.get_embedding(content)
         

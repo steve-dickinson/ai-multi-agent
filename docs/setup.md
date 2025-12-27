@@ -1,7 +1,7 @@
 # Setup Guide
 
 ## Prerequisites
-- **Python 3.11+**
+- **Python 3.13+**
 - **uv**: High-performance Python package installer. [Install guide](https://github.com/astral-sh/uv).
 - **Docker**: For running MongoDB and PostgreSQL databases.
 

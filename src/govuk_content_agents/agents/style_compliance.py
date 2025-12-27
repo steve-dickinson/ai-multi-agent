@@ -1,3 +1,4 @@
+from typing import override
 from .base import BaseAgent
 
 class StyleComplianceAgent(BaseAgent):
@@ -9,6 +10,7 @@ class StyleComplianceAgent(BaseAgent):
     def __init__(self):
         super().__init__(name="Style & Compliance")
 
+    @override
     def get_system_prompt(self) -> str:
         return """You are an expert Style & Compliance Editor for GOV.UK.
 Your role is to strictly enforce the GOV.UK Style Guide.

@@ -1,4 +1,4 @@
-from typing import Any, Dict, Optional
+from typing import Any, override
 from .base import BaseAgent
 import json
 
@@ -6,6 +6,7 @@ class SimplifierAgent(BaseAgent):
     def __init__(self):
         super().__init__(name="The Simplifier")
 
+    @override
     def get_system_prompt(self) -> str:
         return """You are The Simplifier.
 Your ONLY goal is to make the content easier to read.
@@ -25,6 +26,7 @@ class LegalistAgent(BaseAgent):
     def __init__(self):
         super().__init__(name="The Legalist")
 
+    @override
     def get_system_prompt(self) -> str:
         return """You are The Legalist.
 Your ONLY goal is accuracy and precision.
@@ -45,6 +47,7 @@ class MediatorAgent(BaseAgent):
     def __init__(self):
         super().__init__(name="The Mediator")
 
+    @override
     def get_system_prompt(self) -> str:
         return """You are The Mediator.
 You have listed to two arguments:
@@ -63,7 +66,7 @@ Output JSON:
 }
 """
 
-    async def mediate(self, original: str, simplified: str, legal: str) -> Dict[str, Any]:
+    async def mediate(self, original: str, simplified: str, legal: str) -> dict[str, Any]:
         """Special execution method that takes all inputs."""
         prompt = f"""
 ORIGINAL CONTENT:

@@ -1,4 +1,4 @@
-from typing import Any, Dict, List
+from typing import override
 from .base import BaseAgent
 from ..templates.govuk_patterns import GOVUK_TEMPLATES
 
@@ -10,6 +10,7 @@ class TemplateAgent(BaseAgent):
     def __init__(self):
         super().__init__(name="Content Architect")
 
+    @override
     def get_system_prompt(self) -> str:
         return """You are the Content Architect for GOV.UK.
 Your goal is to scaffold a draft piece of content based on a specific template and user brief.

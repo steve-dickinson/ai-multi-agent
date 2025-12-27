@@ -37,6 +37,12 @@ A common problem in large organisations is contradictory advice across departmen
 3.  It performs a semantic search across the entire organisational knowledge base.
 4.  **CRITICAL ALERT**: If your draft contradicts an existing policy, it is flagged as a High Severity issue.
 
+### Knowledge Base Manager
+To keep this data fresh, the **Knowledge Base Manager** allows you to:
+- **Import Content**: Scrape live URLs, fetch from APIs, or paste text.
+- **Tag Data**: Assign departments (e.g., HMRC, DWP) to track cross-org conflicts.
+- **Real-time Indexing**: New policies are immediately vectorised and available for consistency checks.
+
 ## 4. The Content Architect
 > *"Standardisation by default."*
 

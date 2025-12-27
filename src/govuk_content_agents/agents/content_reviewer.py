@@ -1,4 +1,4 @@
-from typing import Dict, Any
+from typing import override
 from .base import BaseAgent
 
 class ContentReviewerAgent(BaseAgent):
@@ -9,6 +9,7 @@ class ContentReviewerAgent(BaseAgent):
     def __init__(self):
         super().__init__(name="Content Reviewer")
         
+    @override
     def get_system_prompt(self) -> str:
         return """You are an expert Content Reviewer for GOV.UK.
 Your role is to analyze content for structure, clarity, and logical flow.
