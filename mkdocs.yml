@@ -11,5 +11,8 @@ nav:
   - Getting Started: setup.md
   - Architecture: architecture.md
 
+site_url: https://steve-dickinson.github.io/ai-multi-agent/
+use_directory_urls: false
+
 plugins:
   - search
