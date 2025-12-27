@@ -20,5 +20,15 @@ jobs:
       - name: Install dependencies
         run: uv sync --group dev
         
+      - name: Configure Git Credentials
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        
+      - name: Build Site
+        run: |
+          uv run mkdocs build
+          touch site/.nojekyll
+          
       - name: Deploy to GitHub Pages
         run: uv run mkdocs gh-deploy --force

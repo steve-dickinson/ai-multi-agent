@@ -8,7 +8,7 @@ This platform acts as an intelligent pair-programmer for content designers. It u
 
 ## Why use this system?
 
-*   **Reduce specialised labour**: Automate the routine checks (style guide, passive voice) so humans can focus on strategy.
+*   **Empower content designers**: Automate routine checks (style guide, passive voice) to aid humans in focusing on strategy.
 *   **Prevent policy conflicts**: The [Silo Breaker](capabilities.md#3-silo-breaker-consistency-check) agent catches contradictions across departments.
 *   **Simulate user research**: The [Persona Lab](capabilities.md#1-the-persona-lab) tests your content against anxious or non-native users instantly.
 
