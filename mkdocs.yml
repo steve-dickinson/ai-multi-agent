@@ -1,0 +1,14 @@
+site_name: GOV.UK Content AI Agents
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - navigation.sections
+
+nav:
+  - Home: index.md
+  - Setup: setup.md
+  - Architecture: architecture.md
+
+plugins:
+  - search
