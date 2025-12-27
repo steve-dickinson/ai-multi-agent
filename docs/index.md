@@ -26,6 +26,7 @@ The system provides a **Streamlit** dashboard for easy interaction.
     *   **GOV.UK API**: Enter a path (e.g., `/vat-rates`). The system will query the GOV.UK Content API, automatically handling standard pages and multi-part guides.
 3.  **Generate**: Use the "Content Architect" (Create) page to build new drafts from official templates.
 4.  **Review**: Watch the agents analyze and rewrite the content.
+    *   *Note*: The **Silo Breaker** automatically checks for contradictions against HMRC/DWP policies during this step.
 5.  **Simulate**: Use the "Persona Lab" page to see how an "Anxious User" or "Non-Native Speaker" interprets the content.
 6.  **Decision**: Use the "Review Queue" page to Approve or Reject the final output.
 

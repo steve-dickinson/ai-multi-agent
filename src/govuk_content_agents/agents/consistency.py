@@ -17,22 +17,23 @@ class ConsistencyAgent(BaseAgent):
         return """You are a Consistency Checker for GOV.UK content.
 Your role is to ensure the new content does not duplicate or contradict existing content.
 
-You will be provided with "Existing Similar Content" found in our database.
-Compare the "New Content" with the "Existing Similar Content".
+You will be provided with "Existing Similar Content" found in our knowledge base.
+Some content comes from OTHER DEPARTMENTS (e.g., HMRC, DWP).
 
 Analyze for:
 1.  **Duplication**: Is this content already published?
-2.  **Contradiction**: Does this content say something different than existing content on the same topic?
+2.  **Contradiction (CRITICAL)**: Does this content violate a policy from another department? 
+    *   Example: If the text says "VAT is optional" but HMRC says "VAT is mandatory", this is a HIGH SEVERITY ERROR.
 3.  **Related Links**: Suggest existing content that should be linked to.
 
 Output JSON:
 {
   "summary": "Analysis of consistency with existing content",
-  "score": 0-100 (100 = unique and consistent, 0 = exact duplicate/contradiction),
+  "score": 0-100 (100 = unique and consistent, 0 = exact duplicate or policy violation),
   "issues": [
     {
-      "severity": "high|medium|low",
-      "description": "Description of conflict or duplication",
+      "severity": "High|Medium|Low",
+      "description": "Description of conflict or duplication. Mention the Department if applicable.",
       "suggestion": "Link to existing page X instead / Update existing page X"
     }
   ]
