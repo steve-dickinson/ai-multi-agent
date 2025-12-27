@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="architecture/">
+        <link rel="next" href="setup/">
       
       
         
@@ -281,10 +281,65 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -370,6 +425,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -399,6 +482,20 @@
 <li><strong>Improvement</strong>: Automatically rewrites content based on feedback from other agents.</li>
 <li><strong>Quality Judge</strong>: The final decision maker that scores content (0-100) and approves/rejects it.</li>
 </ul>
+<h2 id="user-guide">User Guide</h2>
+<h3 id="using-the-interface">Using the Interface</h3>
+<p>The system provides a <strong>Streamlit</strong> dashboard for easy interaction.</p>
+<ol>
+<li><strong>Launch</strong>: <code>uv run streamlit run src/govuk_content_agents/ui/app.py</code></li>
+<li><strong>Input Methods</strong>:<ul>
+<li><strong>Text</strong>: Paste raw draft content.</li>
+<li><strong>URL</strong>: Enter a web page URL (e.g., existing content to review). The system will scrape and clean the text.</li>
+<li><strong>GOV.UK API</strong>: Enter a path (e.g., <code>/vat-rates</code>). The system will query the GOV.UK Content API, automatically handling standard pages and multi-part guides.</li>
+</ul>
+</li>
+<li><strong>Review</strong>: Watch the agents analyze and rewrite the content.</li>
+<li><strong>Decision</strong>: Use the "Review Queue" page to Approve or Reject the final output.</li>
+</ol>
 
 
 

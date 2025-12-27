@@ -2,18 +2,27 @@
 
 > Multi-agent AI system for reviewing GOV.UK content with human oversight.
 
-## Project Status: Stage 1 (Foundation)
-Functional base agent and Content Reviewer agent implemented.
+## Project Status: Stage 3 (Production Ready)
+Full multi-agent system implemented with Streamlit UI and Docker containers.
 **Default Provider**: OpenAI (`gpt-4.1-mini`).
 **Supported Providers**: OpenAI, Google Gemini.
 
 ## Features (Implemented)
 - 🏗️ **Core Infrastructure**: Pydantic configuration, structured logging.
-- 🤖 **Multi-Provider Agents**:
-    - **OpenAI**: Default provider (`gpt-4.1-mini`) for reliable, fast responses.
-    - **Gemini**: Supported fallback (`gemini-2.0-flash`) with automatic rate-limit retries.
-- 📝 **Content Reviewer Agent**: Analyzes structure, clarity, and user needs using GOV.UK standards.
-- 🗄️ **Database Layer**: Async MongoDB and PgVector clients ready for use.
+- 🤖 **Multi-Provider Agents**: OpenAI (Default) & Gemini (Fallback).
+- 🧠 **Smart Orchestration**: LangGraph-based feedback loop.
+- 👥 **Team of Agents**:
+    - **Content Reviewer**: Structure & Clarity.
+    - **Style Compliance**: GOV.UK Styleguide rules.
+    - **Consistency**: Vector-based semantic duplication check.
+    - **Improvement**: Auto-rewriting.
+    - **Judge**: Final quality scoring.
+- 🖥️ **Human-in-the-Loop UI**: Streamlit dashboard for interactive reviews.
+- 🔌 **Dynamic Inputs**:
+    - Raw Text
+    - URL Web Scraping
+    - GOV.UK Content API Integration
+- 🗄️ **Database Layer**: Async MongoDB and PgVector.
 
 
 ### Running the UI
@@ -60,7 +69,11 @@ Access the app at http://localhost:8501.
 
 4.  **Run the Demo**:
     ```bash
-    uv run python scripts/demo_stage_1.py
+    uv run python scripts/demo_stage_2.py
+    ```
+    Or run the UI:
+    ```bash
+    uv run streamlit run src/govuk_content_agents/ui/app.py
     ```
 
 ## Development
