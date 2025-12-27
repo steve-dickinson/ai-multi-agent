@@ -18,6 +18,7 @@ Functional base agent and Content Reviewer agent implemented.
 
 ### Running the UI
 The Streamlit interface allows you to interact with the agent team interactively.
+You can enter text directly, **fetch content from a URL**, or use the **GOV.UK Content API**.
 
 ```bash
 uv run streamlit run src/govuk_content_agents/ui/app.py
