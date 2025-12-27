@@ -78,6 +78,22 @@ Access the app at http://localhost:8501.
     uv run streamlit run src/govuk_content_agents/ui/app.py
     ```
 
+## Configuration
+
+The application is configured via environment variables. Copy `.env.example` to `.env` and set the following:
+
+| Variable | Required | Description |
+| :--- | :--- | :--- |
+| `OPENAI_API_KEY` | **Yes** | Your OpenAI API Key (starts with `sk-`). Required for the default agents. |
+| `GEMINI_API_KEY` | No | Your Google Gemini API Key. Required only if using Gemini as a fallback. |
+| `LOG_LEVEL` | No | Logging verbosity (default: `INFO`). |
+
+**Database Defaults (Docker)**:
+The `.env.example` comes pre-configured for the Docker Compose setup:
+*   `MONGO_URI=mongodb://admin:password@localhost:27018`
+*   `POSTGRES_HOST=localhost`
+*   `POSTGRES_PORT=5432`
+
 ## Development
 
 ### Running Tests
