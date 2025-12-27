@@ -24,6 +24,7 @@ The system provides a **Streamlit** dashboard for easy interaction.
     *   **Text**: Paste raw draft content.
     *   **URL**: Enter a web page URL (e.g., existing content to review). The system will scrape and clean the text.
     *   **GOV.UK API**: Enter a path (e.g., `/vat-rates`). The system will query the GOV.UK Content API, automatically handling standard pages and multi-part guides.
-3.  **Review**: Watch the agents analyze and rewrite the content.
-4.  **Decision**: Use the "Review Queue" page to Approve or Reject the final output.
+3.  **Generate**: Use the "Content Architect" (Create) page to build new drafts from official templates.
+4.  **Review**: Watch the agents analyze and rewrite the content.
+5.  **Decision**: Use the "Review Queue" page to Approve or Reject the final output.
 

@@ -11,6 +11,7 @@ Full multi-agent system implemented with Streamlit UI and Docker containers.
 - 🏗️ **Core Infrastructure**: Pydantic configuration, structured logging.
 - 🤖 **Multi-Provider Agents**: OpenAI (Default) & Gemini (Fallback).
 - 🧠 **Smart Orchestration**: LangGraph-based feedback loop.
+- 🏗️ **Content Architect**: Template-based generation for Start Pages, Guides, and Answers.
 - 👥 **Team of Agents**:
     - **Content Reviewer**: Structure & Clarity.
     - **Style Compliance**: GOV.UK Styleguide rules.
