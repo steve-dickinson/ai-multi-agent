@@ -15,6 +15,7 @@ Full multi-agent system implemented with Streamlit UI and Docker containers.
 - 🧪 **Persona Lab**: Simulate user experiences (e.g., "Anxious User", "Non-Native Speaker").
 - ⚖️ **Debate Mode**: "The Simplifier" vs "The Legalist" propose edits, and data Mediator synthesizes the best version.
 - 🏛️ **Silo Breaker**: Cross-department policy checking (matches against HMRC, DWP etc.).
+- 📊 **Visual Analytics**: Heatmaps for passive voice/sentence length and semantic diffs.
 - 👥 **Team of Agents**:
     - **Content Reviewer**: Structure & Clarity.
     - **Style Compliance**: GOV.UK Styleguide rules.
