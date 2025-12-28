@@ -56,7 +56,7 @@ Access the app at http://localhost:8501.
 ### Fast Setup
 1.  **Clone and Install**:
     ```bash
-    git clone <repo-url>
+    git clone https://github.com/steve-dickinson/ai-multi-agent.git
     cd ai-multi-agent
     uv sync
     ```

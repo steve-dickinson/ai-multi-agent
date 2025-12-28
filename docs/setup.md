@@ -9,7 +9,7 @@
 
 1.  **Clone the repository**:
     ```bash
-    git clone <your-repo-url>
+    git clone https://github.com/steve-dickinson/ai-multi-agent.git
     cd ai-multi-agent
     ```
 
